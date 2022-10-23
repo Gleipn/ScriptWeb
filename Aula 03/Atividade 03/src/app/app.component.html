@@ -1,0 +1,40 @@
+<!--<h1>
+  {{ title }}
+</h1>
+
+<p>
+  {{ descricao }}
+</p>
+-->
+<!-- <p>{{pessoa.nome}} </p>
+<p>{{pessoa.idade}}</p>
+<p>{{pessoa.altura}}</p> -->
+
+<!-- <img [src]="imagem" [alt]="des"> -->
+
+<!--
+  //Diretiva - São recursos do Angular que permitem criar estrutras de repetição de decisao no HTML
+  //ngIf - Diretiva de decisão
+  //ngFor - Diretiva para repetição
+-->
+<!-- ngIf 
+<p *ngIf="pessoa.idade >= 18">{{ pessoa.nome }}</p>-->
+
+<!-- ngFor -->
+<!-- <h2 *ngFor="let cliente of meuCliente">{{cliente.nome}}</h2> -->
+
+<!-- Se eu quiser exibir somente nomes do array maior de idade?
+<h2 *ngFor="let allaf of meuCliente">
+  <p *ngIf="allaf.idade >= 18">{{ allaf.nome }}</p>
+</h2> -->
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col" *ngFor="let imagem of Imagens">
+        <div class="card shadow-sm">
+          <img [src]="imagem.url" [alt]="imagem.legenda" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
