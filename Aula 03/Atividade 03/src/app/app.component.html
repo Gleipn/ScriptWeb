@@ -30,8 +30,8 @@
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col" *ngFor="let imagem of Imagens">
-        <div class="card shadow-sm">
+      <div class="col" *ngFor="let imagem of Imagens; index as i">
+        <div class="card shadow-sm" *ngIf="i % 2 != 0">
           <img [src]="imagem.url" [alt]="imagem.legenda" />
         </div>
       </div>

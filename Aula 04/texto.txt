@@ -1,0 +1,7 @@
+Data BInding - pega uma informação do arquivo ts e passa para o arquivo .html
+
+EventBInding - pega uma informação no arquivo html e leva para o arquivo ts
+
+DataBind:  {{ }} ou []
+
+EventBInding: ()
