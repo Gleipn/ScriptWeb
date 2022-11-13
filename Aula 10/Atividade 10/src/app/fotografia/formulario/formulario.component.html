@@ -1,0 +1,58 @@
+<!-- Template Driven do Angular -->
+<!-- OBS: Para usar o ngForm precisa fazer a importação do modulo FormsModule
+    no arquivo de modulo que é responsavel pelo component 
+    (ex: fotografia.module.ts)
+-->
+<!-- ngForm -> vai permitir criar uma variavel no html -->
+<!-- ngModel -> vai trabalhar em conjunto com o ngForm -->
+<!-- ngSubmit vai enviar as informações do formulario para o arquivo .ts -->
+
+<br />
+
+<!-- Template Driven -->
+<!-- <div class="container mt-5">
+  <form #form="ngForm" (ngSubmit)="cadastrar(form)">
+    <div class="mb-3">
+      <label for="" class="form-label">Imagem</label>
+      <input
+        type="url"
+        class="form-control"
+        name="img"
+        id=""
+        ngModel
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Titulo</label>
+      <input
+        type="text"
+        class="form-control"
+        id=""
+        name="titulo"
+        ngModel
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+      {{ nameButton }}
+    </button>
+  </form>
+</div> -->
+
+<!-- Formulario com data driven -->
+<div class="container mt-5">
+  <form [formGroup]="form" (submit)="cadastro()">
+    <div class="mb-3">
+      <label for="" class="form-label">Imagem</label>
+      <input type="url" class="form-control" formControlName="img" />
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Titulo</label>
+      <input type="text" class="form-control" formControlName="titulo" />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+      {{ nameButton }}
+    </button>
+  </form>
+</div>
