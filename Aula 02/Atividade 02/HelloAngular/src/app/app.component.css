@@ -1,0 +1,38 @@
+.example {
+  margin-left: 25%;
+  color: #fff;
+}
+.example-item {
+  width: 150px;
+  height: 150px;
+}
+.example-item_1 {
+  background-color: #faa116;
+  float: left;
+}
+.example-item_2 {
+  background-color: #57c7c3;
+  float: left;
+}
+.example-item_3 {
+  background-color: #3b97d3;
+  float: left;
+}
+.example-item_4 {
+  background-color: #ff0000;
+  float: left;
+}
+
+@media screen and (max-width: 1200px) {
+  .example-item_3 {
+    clear: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .example-item_2,
+  .example-item_3,
+  .example-item_4 {
+    clear: left;
+  }
+}
