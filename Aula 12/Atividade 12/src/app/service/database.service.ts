@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
-import { Fotos } from '../fotografia/foto/foto';
+import { Fotos } from "../fotografia/foto/foto";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 
 //A função desse serviço será:
@@ -14,11 +14,11 @@ import { Fotos } from '../fotografia/foto/foto';
 //Atualizar uma foto
 export class DatabaseService {
   //Atributo que recebe o endereço da API
-  readonly API = 'http://localhost:3000/fotos/';
+  readonly API = "http://localhost:3000/fotos/";
 
   //Vou contratar um tradutor - httpOptions
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    headers: new HttpHeaders({ "Content-Type": "application/json" }),
   };
 
   constructor(private http: HttpClient) {}
@@ -30,11 +30,13 @@ export class DatabaseService {
 
   //Método de cadastro da foto
   postFoto(form: any) {
-    return this.http.post(this.API, JSON.stringify(form), this.httpOptions);
+    return this.http
+      .post(this.API, JSON.stringify(form), this.httpOptions)
+      .subscribe();
   }
 
   //Exclusão da foto
   delFoto(id: number) {
-    return this.http.delete(this.API + id);
+    return this.http.delete(this.API + id).subscribe();
   }
 }

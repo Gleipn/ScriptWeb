@@ -40,6 +40,6 @@ export class FotoComponent {
   }
 
   deletar(id: number) {
-    this.database.delFoto(id).subscribe();
+    this.database.delFoto(id);
   }
 }

@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { Fotos } from './foto';
-import { DatabaseService } from 'src/app/service/database.service';
+import { Fotos } from "./foto";
+import { DatabaseService } from "src/app/service/database.service";
 
 //Decorarator diz a função da classe
 //Decorar a classe - Utilizar um decorator
 @Component({
-  selector: 'app-foto',
-  templateUrl: './foto.component.html',
-  styleUrls: ['./foto.component.css'],
+  selector: "app-foto",
+  templateUrl: "./foto.component.html",
+  styleUrls: ["./foto.component.css"],
 })
 export class FotoComponent {
-  nameButton = 'Fotos Pares';
-  titulo = 'Minhas Fotos';
+  nameButton = "Fotos Pares";
+  titulo = "Minhas Fotos";
   control = true;
 
   //Criar um array de objetos para as fotos
@@ -40,6 +40,6 @@ export class FotoComponent {
   }
 
   deletar(id: number) {
-    this.database.delFoto(id).subscribe();
+    this.database.delFoto(id);
   }
 }

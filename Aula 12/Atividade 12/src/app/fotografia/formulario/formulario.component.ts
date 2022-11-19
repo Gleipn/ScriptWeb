@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
-import { DatabaseService } from 'src/app/service/database.service';
+import { DatabaseService } from "src/app/service/database.service";
 
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css'],
+  selector: "app-formulario",
+  templateUrl: "./formulario.component.html",
+  styleUrls: ["./formulario.component.css"],
 })
 export class FormularioComponent implements OnInit {
-  nameButton = 'Cadastrar';
+  nameButton = "Cadastrar";
 
   //A ferramenta formgroup captura as informações
   //do formulario e coloca na variavel form
@@ -31,8 +31,8 @@ export class FormularioComponent implements OnInit {
 
   validaForm() {
     this.form = this.formBuilder.group({
-      img: ['', [Validators.required, Validators.minLength(5)]],
-      titulo: ['', [Validators.required, Validators.minLength(1)]],
+      img: ["", [Validators.required, Validators.minLength(5)]],
+      titulo: ["", [Validators.required, Validators.minLength(1)]],
     });
   }
 
@@ -41,7 +41,7 @@ export class FormularioComponent implements OnInit {
   cadastro() {
     //alert('Dados cadastrados!');
     //console.log(this.form.value);
-    this.database.postFoto(this.form.value).subscribe();
+    this.database.postFoto(this.form.value);
   }
 
   //Todo método pode ou não receber um parametro

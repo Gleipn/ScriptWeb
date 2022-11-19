@@ -29,12 +29,14 @@ export class DatabaseService {
   }
 
   //Método de cadastro da foto
-  postFoto(form: any) {
-    return this.http.post(this.API, JSON.stringify(form), this.httpOptions);
+  postFoto(dados: any) {
+    return this.http
+      .post(this.API, JSON.stringify(dados), this.httpOptions)
+      .subscribe();
   }
 
   //Exclusão da foto
   delFoto(id: number) {
-    return this.http.delete(this.API + id);
+    return this.http.delete(this.API + id).subscribe();
   }
 }

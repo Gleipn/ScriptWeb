@@ -41,7 +41,7 @@ export class FormularioComponent implements OnInit {
   cadastro() {
     //alert('Dados cadastrados!');
     //console.log(this.form.value);
-    this.database.postFoto(this.form.value).subscribe();
+    this.database.postFoto(this.form.value);
   }
 
   //Todo método pode ou não receber um parametro
